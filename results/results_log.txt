@@ -1,0 +1,17 @@
+Results (Phase 1 - Simulink)
+
+Both controllers were simulated on an identical plant, with an identical reference step (0 to 10 units at t
+= 2s) and an identical disturbance injected at t = 10s, to allow direct, fair comparison.
+
+Key Metrics
+
+- PID RMSE (steady-state): 0.7294
+- Event-Triggered PID RMSE (steady-state): 0.7523
+- Number of triggered updates: 201 (out of 20001 raw solver steps)
+- Update savings vs. raw solver grid: 99.0% (not a fair baseline - see note below)
+- Update savings vs. realistic 50 Hz PID baseline: 79.9%
+
+Note on baseline selection: the raw solver grid (1kHz) does not reflect a realistic embedded PID
+control loop rate. A Zero-Order Hold was added to the PID branch to simulate a realistic 50Hz control
+update rate, against which the 79.9% savings figure is reported. This is considered the defensible,
+literature-comparable figure for the project's novelty claims.
