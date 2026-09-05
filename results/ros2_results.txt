@@ -1,0 +1,31 @@
+Results (Phase 2 - ROS + gazebo)
+
+Run-1 Results:
+Duration compared: 33.3s
+PID publishes: 536  (~16.08 Hz)
+Event-triggered publishes: 50  (~1.50 Hz)
+Communication savings: 90.7%
+PID steady-state mean |error|: 0.0261
+Event-triggered steady-state mean |error|: 0.0295
+
+Run-2 Results:
+Duration compared: 62.0s
+PID publishes: 1489  (~24.02 Hz)
+Event-triggered publishes: 84  (~1.36 Hz)
+Communication savings: 94.4%
+PID steady-state mean |error|: 0.0177
+Event-triggered steady-state mean |error|: 0.0165
+
+Run-3 Results:
+Duration compared: 101.9s
+PID publishes: 2596  (~25.47 Hz)
+Event-triggered publishes: 119  (~1.17 Hz)
+Communication savings: 95.4%
+PID steady-state mean |error|: 0.0107
+Event-triggered steady-state mean |error|: 0.0103
+
+Communication savings were consistent across three independent runs, ranging from 90.7% to 95.4%,
+with tracking error (RMSE) comparable to or better than the continuous PID baseline in all cases. This
+corroborates the Phase 1 Simulink result (~79.9% savings under idealized conditions) and
+demonstrates that the approach holds under real message-passing overhead, physics simulation, and
+sensor noise.
